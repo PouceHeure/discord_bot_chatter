@@ -5,7 +5,7 @@ import asyncio
 import threading
 import discord
 
-VERBOSE = True
+VERBOSE = False
 
 # PATHS VARIABLES
 
