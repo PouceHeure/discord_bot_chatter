@@ -5,7 +5,7 @@
         }
     }, 
     "servers": {
-        "BotServer": {
+        "ServerExample": {
             "id": 9999999999999999,
             "channels": {
                 "channel_example": 9999999999999999
