@@ -4,7 +4,7 @@ only python3 library
 ## Goal 
 Create a way to define and call easily a chatter bot for sending some messages from anyway in your computer. Just need to create config file with some information about your bots and servers and that's all.
 
-For example, you can use a bot during deep-learning training in sending some information about this train. 
+For example, you can use a bot during deep-learning training in sending some information about the current train.
 
 ## Get started 
 
