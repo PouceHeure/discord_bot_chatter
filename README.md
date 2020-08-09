@@ -8,8 +8,10 @@ For example, you can use a bot during deep-learning training in sending some inf
 
 ## Get started 
 
-### Discord 
-You have to create a server and bot. You can follow these instructions: [https://discordpy.readthedocs.io/en/latest/discord.html](https://discordpy.readthedocs.io/en/latest/discord.html)
+### Require 
+You have to create a server and bot. 
+
+You can follow these instructions: [https://discordpy.readthedocs.io/en/latest/discord.html](https://discordpy.readthedocs.io/en/latest/discord.html)
 
 
 ### Installation 
@@ -22,12 +24,10 @@ $ ./install.sh
 
 ### Configuration 
 
-This script need some information like bot token, server id and channel id. 
-
-The previous script created a json to this location: 
+This script need some information like bot token, server id and channel id. The previous script created a json to this location: 
 **~/.discord_bot_chatter/config.json**
 
-find information: 
+Find information: 
 - bot token: go to your discord developer portail
 - ids: 
   - switch your apparence to developer inside discord settings application  
@@ -55,6 +55,7 @@ You have to fill it, it's really important to follow this pattern:
 ```
 
 :pencil: change only elements between "{}"
+
 :pencil: you can add more than one bots/servers
 
 
@@ -83,6 +84,7 @@ if __name__ == "__main__":
 {bot_name},{server_name} and a {default_channel_name} need to be the same name with your config file. 
 
 :pencil: you can stack messages even if the connection isn't done, once the connection is established all previous messages are sent in the same order. 
+
 
 
 
