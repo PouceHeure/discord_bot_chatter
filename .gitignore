@@ -1,0 +1,10 @@
+# python  
+venv/
+__pycache__/
+build/
+dist/
+discord_bot_chatter.egg*/
+
+# vscode 
+.vscode/
+

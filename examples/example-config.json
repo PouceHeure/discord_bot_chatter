@@ -1,0 +1,15 @@
+{
+    "bots": {
+        "BotExample": {
+            "token": "token"
+        }
+    }, 
+    "servers": {
+        "BotServer": {
+            "id": 9999999999999999,
+            "channels": {
+                "channel_example": 9999999999999999
+            }
+        }
+    }
+}
