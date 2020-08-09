@@ -158,18 +158,21 @@ class BotChatter:
         self._bot_name = bot_name
         self._server_name = server_name
         self._connection_status = ConnectionStatus.DISCONNECT  
-        self._handler_jobs = HandlerJobs(self._disconnect_safe)
+        self._handler_jobs = HandlerJobs(self._callback_handler)
 
+        # load information from config file
         if(path_config == None):
             path_config = PATH_FILE_CONFIG_DEFAULT
         self._config = BotChatter.LOAD_CONFIG(path_config)
 
+        # extract information from config file
         self._token = self._extract_token(bot_name)
         self._server_id = self._extract_server_id(server_name)
-
-        # extract channel id 
         if(default_channel_name != None): 
             self._default_channel_id = self._extract_channel_id(server_name,default_channel_name)
+
+
+    # job functions
 
     def _try_to_do(self,job):
         """if the client isn't connected, the job is added to the pool
@@ -183,6 +186,18 @@ class BotChatter:
         else: 
             print_msg(f"job added to the pool: {job}")
             self._handler_jobs.add_job_to_pool(job)
+
+    def _callback_handler(self,job):
+        """check if the connection can't be closed or not 
+
+        Args:
+            job (Job): job ended
+        """
+        print_msg(f"job ended: {job}")
+        if(self._connection_status == ConnectionStatus.TRY_DISCONNECT  and 
+            self._handler_jobs.count_jobs_running() == 0): 
+            self._loop.call_soon_threadsafe(self._loop.stop)
+            self._connection_status = ConnectionStatus.DISCONNECT
 
     # extract config information functions
 
@@ -219,19 +234,7 @@ class BotChatter:
     async def _async_disconnect(self,callback): 
         self._connection_status = ConnectionStatus.TRY_DISCONNECT  
         callback()
-
-    def _disconnect_safe(self,job):
-        """check if the connection can't be close or not 
-
-        Args:
-            job (Job): job ended
-        """
-        print_msg(f"job ended: {job}")
-        if(self._connection_status == ConnectionStatus.TRY_DISCONNECT  and 
-            self._handler_jobs.count_jobs_running() == 0): 
-            self._loop.call_soon_threadsafe(self._loop.stop)
-            self._connection_status = ConnectionStatus.DISCONNECT
-        
+     
     async def _async_send_message(self,callback,message,channel_id):
         channel = self._client.get_channel(channel_id)
         await channel.send(message) 
