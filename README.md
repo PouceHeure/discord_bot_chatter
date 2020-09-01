@@ -1,5 +1,8 @@
 # discord_bot_chatter 
-only python3 library
+
+![tag:status:status:production](https://raw.githubusercontent.com/PouceHeure/markdown_tags/v1.0/tags/status/status_production/status_production_green.png)
+
+![tag:language:python3](https://raw.githubusercontent.com/PouceHeure/markdown_tags/v1.0/tags/language/python3/python3_blue.png)
 
 ## Goal 
 Create a way to define and call easily a chatter bot for sending some messages from anyway in your computer. Just need to create config file with some information about your bots and servers and that's all.
