@@ -32,7 +32,7 @@ This script need some information like bot token, server id and channel id. The 
 
 Find information: 
 - bot token: go to your discord developer portail
-- ids: 
+- ids (inside discord software): 
   - switch your apparence to developer inside discord settings application  
   - right click in your server and select "copy identification"
   - same for channel
