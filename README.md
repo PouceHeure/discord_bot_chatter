@@ -20,7 +20,7 @@ You can follow these instructions: [https://discordpy.readthedocs.io/en/latest/d
 ### Installation 
 Just need to execute the script **install.sh**
 
-```
+```bash
 # go to the root project 
 $ ./install.sh
 ```
@@ -39,7 +39,7 @@ Find information:
 
 You have to fill it, it's really important to follow this pattern: 
 
-```
+```json
 {
     "bots": {
         "{bot_name}": {
@@ -66,7 +66,7 @@ You have to fill it, it's really important to follow this pattern:
 
 This is a simple example: 
 
-```
+```python
 #importation
 from discord_bot_chatter import discord_bot_chatter
 
